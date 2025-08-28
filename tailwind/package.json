@@ -1,0 +1,13 @@
+{
+  "name": "tailwind",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bunx @tailwindcss/cli -i ./input.css -o ./../static/output.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "4.1.12",
+    "@tailwindcss/typography": "0.5.16",
+    "tailwindcss": "4.1.12"
+  }
+}

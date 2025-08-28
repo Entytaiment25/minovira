@@ -1,0 +1,34 @@
+[package]
+name = "axum_htmx_askama"
+version = "0.1.0"
+edition = "2024"
+
+[profile.dev]
+opt-level = 0
+overflow-checks = false
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+overflow-checks = true
+opt-level = "s"
+panic = "abort"
+strip = "symbols"
+
+[dependencies]
+askama = "0.14.0"
+axum = { version = "0.8.4", default-features = false, features = [
+    "http1",
+    "tokio",
+] }
+comrak = { version = "0.41.0", default-features = false }
+http-body-util = { version = "0.1.3", default-features = false }
+minify-html = { version = "0.16.4", default-features = false }
+tokio = { version = "1.47.1", default-features = false, features = ["full"] }
+tower-http = { version = "0.6.0", default-features = false, features = [
+    "compression-gzip",
+] }
+tracing = { version = "0.1.41", default-features = false }
+tracing-subscriber = { version = "0.3.19", default-features = false, features = [
+    "fmt",
+] }

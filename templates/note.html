@@ -1,0 +1,47 @@
+<div class="max-w-4xl mx-auto">
+    <!-- File Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-3 border-b border-gray-200 gap-2">
+        <div class="flex items-center text-sm text-gray-600">
+            <span class="mr-2">📄</span>
+            <span class="font-mono">{{ title }}</span>
+        </div>
+        <div class="text-xs text-gray-500 font-mono">Last modified: today</div>
+    </div>
+
+    <!-- Document Content -->
+    <div class="prose prose-gray max-w-none font-sans prose-sm sm:prose lg:prose-lg">{{ content | safe }}</div>
+
+    <!-- File Navigation Footer -->
+    <div class="mt-8 sm:mt-12 pt-6 border-t border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="text-xs text-gray-500 font-mono">docs/{{ title }}.md</div>
+            <div class="flex flex-wrap gap-2 sm:gap-4 text-xs font-mono">
+                <a class="text-purple-600 underline hover:text-purple-800 cursor-pointer" hx-get="/note/1"
+                    hx-trigger="click" hx-target="#content" hx-swap="innerHTML"
+                    onclick="if (window.setActiveFile) setActiveFile(document.querySelector('[data-file=introduction]'), 'introduction.md')">
+                    introduction.md
+                </a>
+                <a class="text-purple-600 underline hover:text-purple-800 cursor-pointer" hx-get="/note/2"
+                    hx-trigger="click" hx-target="#content" hx-swap="innerHTML"
+                    onclick="if (window.setActiveFile) setActiveFile(document.querySelector('[data-file=features]'), 'features.md')">
+                    features.md
+                </a>
+                <a class="text-purple-600 underline hover:text-purple-800 cursor-pointer" hx-get="/note/3"
+                    hx-trigger="click" hx-target="#content" hx-swap="innerHTML"
+                    onclick="if (window.setActiveFile) setActiveFile(document.querySelector('[data-file=data]'), 'data.md')">
+                    data.md
+                </a>
+                <a class="text-purple-600 underline hover:text-purple-800 cursor-pointer" hx-get="/note/4"
+                    hx-trigger="click" hx-target="#content" hx-swap="innerHTML"
+                    onclick="if (window.setActiveFile) setActiveFile(document.querySelector('[data-file=getting-started]'), 'getting-started.md')">
+                    getting-started.md
+                </a>
+                <a class="text-purple-600 underline hover:text-purple-800 cursor-pointer" hx-get="/welcome"
+                    hx-trigger="click" hx-target="#content" hx-swap="innerHTML"
+                    onclick="if (window.setActiveFile) setActiveFile(document.querySelector('[data-file=readme]'), 'README.md')">
+                    README.md
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../templates/";
+
+.file-selected {
+    background-color: #f3e8ff !important;
+}
+
+.file-selected span {
+    color: #7c3aed !important;
+}
