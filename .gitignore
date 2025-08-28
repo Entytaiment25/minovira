@@ -3,3 +3,4 @@ node_modules
 bun.lock
 /backup
 static/output.css
+.DS_Store
